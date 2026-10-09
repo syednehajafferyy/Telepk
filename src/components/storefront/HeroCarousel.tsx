@@ -118,20 +118,29 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ slides }) => {
             </div>
           </div>
 
-          {/* Right Side: Product image and matching floating stat badge */}
-          <div className="lg:col-span-5 flex items-center justify-center relative">
-            <div className="relative w-full max-w-[340px] aspect-square flex items-center justify-center">
-              <img
-                src={slide.image}
-                alt={slide.heading}
-                className="w-full h-full object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105"
-              />
+          {/* Right Side: Glassmorphic Hero Stage Card & Floating Stat Badge */}
+          <div className="lg:col-span-5 flex items-center justify-center relative py-4">
+            {/* Soft Ambient Radial Glow behind the hero card */}
+            <div className="absolute -inset-4 bg-gradient-to-tr from-[#1362D7]/20 via-indigo-500/20 to-[#65C42C]/20 rounded-[40px] blur-3xl -z-10 animate-pulse-subtle" />
 
-              {/* Right Floating Stat Badge - in 100% sync with slide */}
+            <div className="relative w-full max-w-[380px] aspect-[4/3] sm:aspect-[4/3] rounded-[32px] p-2 bg-white/70 backdrop-blur-xl border border-white/80 shadow-2xl shadow-slate-900/10 overflow-hidden group">
+              {/* Product Image Stage */}
+              <div className="w-full h-full rounded-[24px] overflow-hidden relative bg-slate-900/5">
+                <img
+                  src={slide.image}
+                  alt={slide.heading}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                {/* Subtle bottom vignette gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent opacity-60 pointer-events-none" />
+              </div>
+
+              {/* Floating Stat Badge */}
               {slide.badge && (
-                <div className="absolute top-4 -right-2 bg-white/90 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-slate-100 text-center animate-fade-in">
+                <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-2 animate-fade-in z-10">
+                  <span className="w-2 h-2 rounded-full bg-[#65C42C] animate-pulse" />
                   <span
-                    className="text-xs sm:text-sm font-black block uppercase tracking-tight"
+                    className="text-xs font-black uppercase tracking-tight"
                     style={{ color: slide.badgeColor || '#1362D7' }}
                   >
                     {slide.badge}
