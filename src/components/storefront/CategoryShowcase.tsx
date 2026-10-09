@@ -48,11 +48,11 @@ export const CategoryShowcase: React.FC = () => {
             className="bg-white rounded-[24px] border border-slate-100 p-4 aspect-[4/5] flex flex-col justify-between items-center text-center shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group cursor-pointer"
           >
             {/* 1:1 Rounded Image Stage */}
-            <div className="w-full aspect-square bg-slate-50 rounded-[18px] overflow-hidden relative mb-3 flex items-center justify-center p-2">
+            <div className="w-full aspect-square bg-slate-50 rounded-[18px] overflow-hidden relative mb-3 flex items-center justify-center">
               <SafeImage
                 src={cat.image || getCategoryGraphic(cat.slug)}
                 alt={cat.name}
-                className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300 p-1"
+                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
               />
             </div>
 

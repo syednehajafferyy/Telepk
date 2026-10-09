@@ -45,11 +45,11 @@ export const FeaturedDealsSection: React.FC = () => {
               onClick={() => openProductBySlug(product.slug)}
               className="bg-white rounded-xl border border-slate-200/80 overflow-hidden p-2.5 flex flex-col justify-between hover:shadow-lg transition-all cursor-pointer group"
             >
-              {/* Image Stage: aspect-square bg-slate-50 rounded-lg relative overflow-hidden mb-2 p-2 */}
-              <div className="aspect-square bg-slate-50 rounded-lg relative overflow-hidden mb-2 p-2 flex flex-col justify-between">
+              {/* Image Stage */}
+              <div className="aspect-square bg-slate-50 rounded-lg relative overflow-hidden mb-2 flex flex-col justify-between">
                 {/* Discount Badge: Top-left pill */}
                 {discountPercent > 0 ? (
-                  <span className="bg-red-600 text-white font-bold text-[10px] px-1.5 py-0.5 rounded-sm w-max z-10">
+                  <span className="bg-red-600 text-white font-bold text-[10px] px-1.5 py-0.5 rounded-sm w-max z-10 m-1">
                     -{discountPercent}%
                   </span>
                 ) : (
@@ -63,11 +63,11 @@ export const FeaturedDealsSection: React.FC = () => {
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = PLACEHOLDER_IMAGE;
                   }}
-                  className="w-full h-full object-contain p-1 group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-300"
                 />
 
                 {/* Tag Badge: Bottom full-width pill */}
-                <span className="bg-blue-600 text-white text-[9px] font-semibold py-0.5 text-center block w-full mt-auto rounded-sm z-10">
+                <span className="bg-blue-600/90 backdrop-blur-xs text-white text-[9px] font-semibold py-0.5 text-center block w-full mt-auto rounded-sm z-10">
                   {product.category || 'Official Warranty'}
                 </span>
               </div>

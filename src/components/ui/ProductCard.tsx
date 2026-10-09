@@ -41,8 +41,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       className="bg-white rounded-[28px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group cursor-pointer"
     >
       <div>
-        {/* Tinted Image Stage: rounded-[22px] p-6 relative overflow-hidden flex items-center justify-center */}
-        <div className={`aspect-square ${getStageBg(product.category)} rounded-[22px] p-6 relative overflow-hidden flex items-center justify-center`}>
+        {/* Tinted Image Stage */}
+        <div className={`aspect-square ${getStageBg(product.category)} rounded-[22px] relative overflow-hidden flex items-center justify-center`}>
           {/* Wishlist Floating Button */}
           <button
             type="button"
@@ -62,7 +62,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <SafeImage
             src={imgSrc}
             alt={product.name}
-            className="w-full h-full object-contain hover:scale-105 transition-transform duration-300 p-2"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
           />
 
           {/* Quick View Button */}
