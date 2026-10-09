@@ -391,7 +391,7 @@ export const Navbar: React.FC = () => {
       {isMobileMenuOpen && (
         <div className="lg:hidden border-t border-gray-200 bg-white px-4 py-4 space-y-4 animate-fade-in shadow-xl">
           {/* Mobile Auth Status Banner */}
-          {isAuthenticated && currentUser ? (
+          {isAuthenticated && currentUser && (
             <div className="p-3 bg-indigo-50/70 border border-indigo-100 rounded-2xl flex items-center justify-between">
               <div className="flex items-center gap-2.5 min-w-0">
                 <div
@@ -416,18 +416,6 @@ export const Navbar: React.FC = () => {
                 Sign Out
               </button>
             </div>
-          ) : (
-            <button
-              type="button"
-              onClick={() => {
-                setIsCustomerModalOpen(true);
-                setIsMobileMenuOpen(false);
-              }}
-              className="w-full min-h-[48px] flex items-center justify-center gap-2 py-3 px-4 bg-gray-900 text-white rounded-2xl font-bold text-xs shadow-sm cursor-pointer"
-            >
-              <User className="w-4 h-4" />
-              <span>Sign In / Register</span>
-            </button>
           )}
 
           {/* Mobile Search */}
