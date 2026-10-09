@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  /* Official TeleX Brand Palette */
+  --primary-color: #1362D7;
+  --secondary-color: #1893B8;
+  --accent-color: #65C42C;
+  --bg-color: #f8fafc;
+  --card-bg-color: #ffffff;
+  --text-color: #0f172a;
+  --border-radius: 12px;
+  --font-family: 'Poppins', sans-serif;
+
+  /* Aliases for backwards compatibility */
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-accent: var(--accent-color);
+  --color-background: var(--bg-color);
+  --color-card: var(--card-bg-color);
+  --color-text: var(--text-color);
+  --radius-base: var(--border-radius);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
+}
+
+/* Dynamic Skinning Utility Classes */
+.bg-theme-primary {
+  background-color: var(--primary-color);
+}
+
+.text-theme-primary {
+  color: var(--primary-color);
+}
+
+.border-theme-primary {
+  border-color: var(--primary-color);
+}
+
+.bg-theme-secondary {
+  background-color: var(--secondary-color);
+}
+
+.text-theme-secondary {
+  color: var(--secondary-color);
+}
+
+.border-theme-secondary {
+  border-color: var(--secondary-color);
+}
+
+.bg-theme-accent {
+  background-color: var(--accent-color);
+}
+
+.text-theme-accent {
+  color: var(--accent-color);
+}
+
+.border-theme-accent {
+  border-color: var(--accent-color);
+}
+
+.bg-theme-card {
+  background-color: var(--card-bg-color);
+}
+
+.bg-theme-bg {
+  background-color: var(--bg-color);
+}
+
+.text-theme-text {
+  color: var(--text-color);
+}
+
+.rounded-theme {
+  border-radius: var(--border-radius);
+}
+
+.dynamic-rounded {
+  border-radius: var(--border-radius);
+}
+
+.dynamic-rounded-lg {
+  border-radius: calc(var(--border-radius) * 1.25);
+}
+
+.dynamic-rounded-sm {
+  border-radius: calc(var(--border-radius) * 0.6);
+}
+
+/* Custom Scrollbar for Smooth UX */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Keyframe Animations */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.02); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

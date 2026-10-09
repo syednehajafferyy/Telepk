@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 90" width="460" height="90" fill="none">
+  <!-- TeleX Official Brand Logo (Crisp White Text for Dark Backgrounds) -->
+  <g fill="#FFFFFF">
+    <!-- T: Top bar + centered stem -->
+    <rect x="10" y="14" width="76" height="13" rx="6.5" />
+    <rect x="41.5" y="27" width="13" height="53" rx="6.5" />
+
+    <!-- E: Floating top capsule + lower E-spine (Middle arm + Left stem + Bottom arm) -->
+    <rect x="96" y="14" width="76" height="13" rx="6.5" />
+    <path d="M 102.5 39 H 165.5 C 169.09 39 172 41.91 172 45.5 C 172 49.09 169.09 52 165.5 52 H 109 V 61 H 165.5 C 169.09 61 172 63.91 172 67.5 C 172 71.09 169.09 74 165.5 74 H 102.5 C 95.04 74 89 67.96 89 60.5 V 52.5 C 89 45.04 95.04 39 102.5 39 Z" />
+
+    <!-- L: Left vertical stem + Bottom horizontal arm -->
+    <path d="M 190.5 14 C 194.09 14 197 16.91 197 20.5 V 61 H 255.5 C 259.09 61 262 63.91 262 67.5 C 262 71.09 259.09 74 255.5 74 H 190.5 C 183.04 74 177 67.96 177 60.5 V 20.5 C 177 16.91 179.91 14 183.5 14 Z" />
+
+    <!-- E: Floating top capsule + lower E-spine -->
+    <rect x="272" y="14" width="76" height="13" rx="6.5" />
+    <path d="M 278.5 39 H 341.5 C 345.09 39 348 41.91 348 45.5 C 348 49.09 345.09 52 341.5 52 H 285 V 61 H 341.5 C 345.09 61 348 63.91 348 67.5 C 348 71.09 345.09 74 341.5 74 H 278.5 C 271.04 74 265 67.96 265 60.5 V 52.5 C 265 45.04 271.04 39 278.5 39 Z" />
+  </g>
+
+  <!-- X Brand Diagonal Intersection (Lime Green + Royal Blue + Overlay Teal) -->
+  <g>
+    <!-- Lime Green Stroke (\ Top-Left to Bottom-Right) -->
+    <path d="M 364 16 C 362 13 365 10 371 10 H 388 C 393 10 397 13 400 17 L 442 73 C 444 76 441 79 435 79 H 418 C 413 79 409 76 406 72 Z" fill="#65C42C" />
+
+    <!-- Royal Blue Stroke (/ Bottom-Left to Top-Right) -->
+    <path d="M 364 73 C 362 76 365 79 371 79 H 388 C 393 79 397 76 400 72 L 442 17 C 444 13 441 10 435 10 H 418 C 413 10 409 13 406 17 Z" fill="#1362D7" />
+
+    <!-- Rhombus Intersection Teal Blend -->
+    <polygon points="397,41 409,41 403,49 391,49" fill="#1893B8" opacity="0.95" />
+  </g>
+</svg>

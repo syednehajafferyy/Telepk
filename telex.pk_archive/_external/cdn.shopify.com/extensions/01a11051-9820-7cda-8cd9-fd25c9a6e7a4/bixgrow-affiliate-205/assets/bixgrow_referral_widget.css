@@ -1,0 +1,723 @@
+/* ------------------------------------------------------------------------------ */
+/* Bixgrow Referral Advocate Popup Styles */
+.bixgrow-referral-advocate-popup-overlay * {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+/* Overlay Container */
+.bixgrow-referral-advocate-popup-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  min-height: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+}
+.bixgrow-referral-advocate-popup-overlay span {
+  display: inline-block;
+}
+/* Main Popup Container */
+.bixgrow-referral-advocate-popup-container {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: row;
+  transition: all 0.3s ease;
+  height: auto;
+  position: relative;
+  width: auto;
+  overflow: auto;
+}
+.bixgrow-referral-advocate-popup-container::-webkit-scrollbar {
+  display: none;
+}
+.bixgrow-referral-advocate-popup-container.animate {
+  animation: bixgrow-advotate-pop-fade-in 0.4s ease-out;
+}
+/* Close Button */
+.bixgrow-referral-advocate-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+  background-color: #dddddd;
+  border-radius: 50%;
+}
+.bixgrow-referral-advocate-popup-close svg {
+  height: 20px;
+  width: 20px;
+}
+/* Back button */
+.bixgrow-referral-advocate-popup-back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  line-height: 20px;
+}
+.bixgrow-referral-advocate-popup-back:empty {
+  display: none;
+}
+.bixgrow-referral-advocate-popup-back svg {
+  height: 20px;
+  width: 20px;
+}
+
+/* Banner Section */
+.bixgrow-referral-advocate-popup-banner {
+  background-color: #f1f1f1;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  width: 395px;
+  height: 651px;
+}
+
+.bixgrow-referral-advocate-popup-icon {
+  width: 40px;
+}
+
+/* Content Section */
+.bixgrow-referral-advocate-popup-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: calc(100% - 395px);
+  max-height: 651px;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  position: relative;
+}
+.bixgrow-referral-advocate-popup-content::-webkit-scrollbar {
+  display: none;
+}
+/* Content Inner */
+.bixgrow-referral-advocate-popup-content-inner {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  flex: 1;
+  justify-content: center;
+}
+.bixgrow-referral-advocate-popup-content-inner:empty {
+  display: none;
+}
+.bixgrow-referral-advocate-popup-headline {
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 550;
+}
+.bixgrow-referral-advocate-popup-description {
+  line-height: 1.2;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* Text Content */
+.bixgrow-referral-advocate-popup-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Email Wrapper */
+.bixgrow-referral-advocate-popup-email-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Form Inputs */
+.bixgrow-referral-advocate-popup-input {
+  padding: 0 25px;
+  border-radius: 30px;
+  display: inline-block;
+  height: 53px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 450;
+}
+.bixgrow-referral-advocate-popup-input::placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+.bixgrow-referral-advocate-popup-input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+/* Form checkbox */
+.bixgrow-referral-advocate-popup-checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 450;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #000;
+}
+
+.bixgrow-referral-advocate-popup-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.bixgrow-referral-advocate-popup-checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #000;
+}
+
+.bixgrow-referral-advocate-popup-checkbox-container
+  input:checked
+  ~ .bixgrow-referral-advocate-popup-checkmark {
+  background-color: rgb(0, 91, 211);
+  border-color: rgb(0, 91, 211);
+}
+
+.bixgrow-referral-advocate-popup-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.bixgrow-referral-advocate-popup-checkbox-container
+  input:checked
+  ~ .bixgrow-referral-advocate-popup-checkmark:after {
+  display: block;
+}
+.bixgrow-referral-advocate-popup-checkbox-container
+  .bixgrow-referral-advocate-popup-checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+/* Email Error Message */
+.bixgrow-referral-advocate-popup-email-error {
+  display: none;
+  padding: 4px 12px;
+  color: #c33;
+  font-size: 11px;
+  width: 100%;
+}
+
+.bixgrow-referral-advocate-popup-email-error.show {
+  display: block;
+}
+
+/* Submit Button */
+.bixgrow-referral-advocate-popup-button {
+  width: 100%;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: 450;
+  padding: 0 25px;
+  height: 55px;
+  border-radius: 50px;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.bixgrow-referral-advocate-popup-button:hover {
+  opacity: 0.9;
+}
+
+.bixgrow-referral-advocate-popup-button:active {
+  opacity: 0.8;
+}
+
+/* Social Share Grid */
+.bixgrow-referral-advocate-popup-social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  text-align: center;
+}
+
+.bixgrow-referral-advocate-popup-social-item {
+  padding: 0 25px;
+  height: 55px;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.bixgrow-referral-advocate-popup-social-item svg {
+  height: 25px;
+  width: 25px;
+}
+
+.bixgrow-referral-advocate-popup-social-item:hover {
+  opacity: 0.9;
+}
+
+.bixgrow-referral-advocate-popup-social-item:active {
+  opacity: 0.8;
+}
+/* Footer */
+.bixgrow-referral-advocate-popup-footer {
+  font-size: 14px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  margin-top: auto;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+}
+.bixgrow-referral-advocate-popup-footer__text {
+  cursor: pointer;
+}
+.bixgrow-referral-advocate-popup-footer__text:hover {
+  text-decoration: underline;
+}
+/* Referral link wrapper and copy icon */
+.bixgrow-referral-advocate-popup-referral-link-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bixgrow-referral-advocate-popup-referral-link-wrapper
+  .bixgrow-referral-advocate-popup-copy-icon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+  position: absolute;
+  right: 16px;
+  z-index: 1;
+}
+
+/* Launcher Button */
+.bixgrow-referral-advocate-popup-launcher {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  cursor: pointer;
+  z-index: 9999;
+}
+.bixgrow-referral-advocate-popup-launcher:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.bixgrow-referral-advocate-popup-launcher.left {
+  top: 50%;
+  left: 0px;
+  transform: rotateZ(90deg) translateY(-100%) translateX(-50%);
+  transform-origin: top left;
+  animation: bixgrow-entrance-left 0.4s cubic-bezier(0.17, 0.67, 0.6, 1)
+    forwards;
+}
+.bixgrow-referral-advocate-popup-launcher.left_bottom {
+  left: 40px;
+  bottom: -50px;
+  animation: bixgrow-entrance-left-bottom 0.4s cubic-bezier(0.17, 0.67, 0.6, 1)
+    forwards;
+}
+
+.bixgrow-referral-advocate-popup-launcher.right {
+  top: 50%;
+  right: 0px;
+  transform: rotateZ(-90deg) translateY(-100%) translateX(50%);
+  transform-origin: top right;
+  animation: bixgrow-entrance-right 0.4s cubic-bezier(0.17, 0.67, 0.6, 1)
+    forwards;
+}
+.bixgrow-referral-advocate-popup-launcher.right_bottom {
+  right: 40px;
+  bottom: -50px;
+  animation: bixgrow-entrance-right-bottom 0.4s cubic-bezier(0.17, 0.67, 0.6, 1)
+    forwards;
+}
+
+/* Launcher Icon */
+.bixgrow-referral-advocate-popup-launcher-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Launcher Text */
+.bixgrow-referral-advocate-popup-launcher-text {
+  line-height: 1.2;
+}
+
+/* Launcher animation */
+@keyframes bixgrow-entrance-left-bottom {
+  0% {
+    bottom: -50px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes bixgrow-entrance-right-bottom {
+  0% {
+    bottom: -50px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes bixgrow-entrance-left {
+  0% {
+    left: -50px;
+    opacity: 0;
+  }
+  100% {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes bixgrow-entrance-right {
+  0% {
+    right: -50px;
+    opacity: 0;
+  }
+  100% {
+    right: 0px;
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .bixgrow-referral-advocate-popup-container {
+    flex-direction: column;
+    width: 100%;
+    max-height: 100vh;
+  }
+  .bixgrow-referral-advocate-popup-banner {
+    width: 100%;
+    min-height: 275px;
+    max-height: 275px;
+  }
+  .bixgrow-referral-advocate-popup-content {
+    width: 100%;
+    overflow: unset;
+    max-height: unset;
+  }
+  /* .bixgrow-referral-advocate-popup-footer {
+        position: unset;
+    } */
+}
+@media (max-width: 768px) {
+  .bixgrow-referral-advocate-popup-content-inner {
+    justify-content: flex-start;
+    padding: 40px 25px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .bixgrow-referral-advocate-popup-overlay {
+    padding: 0px;
+  }
+  .bixgrow-referral-advocate-popup-container {
+    width: 100vw;
+    height: 100dvh;
+    border-radius: 0px !important;
+    max-width: unset !important;
+    max-height: unset !important;
+  }
+  .bixgrow-referral-advocate-popup-social-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .bixgrow-referral-advocate-popup-social-item:first-child {
+    grid-column-start: 1 !important;
+    grid-column-end: 2 !important;
+  }
+}
+
+/* Animation */
+@keyframes bixgrow-advotate-pop-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Friend popup css  */
+
+.bg-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  background-color: rgb(0, 0, 0, 0.25);
+  -webkit-animation-name: bganimatefade;
+  -webkit-animation-duration: 0.4s;
+  animation-name: bganimatefade;
+  animation-duration: 0.4s;
+}
+.bg-modal-content {
+  background: var(--bixgrow_refferral_friend_pupup_bg);
+  border-radius: var(--bixgrow_refferral_friend_pupup_card_border_radius);
+  margin: auto;
+  text-align: center;
+  position: relative;
+  max-width: 500px;
+  padding: 40px;
+  padding-top: 40px !important;
+}
+.bg-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--bixgrow_refferral_friend_pupup_title_color);
+  line-height: normal;
+}
+.bg-content {
+  font-size: 14px;
+  margin-bottom: 24px;
+  color: var(--bixgrow_refferral_friend_pupup_desc_color);
+  font-weight: 450;
+  line-height: normal;
+}
+.bg-input-wrapper {
+  margin-bottom: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.bg-input-wrapper .bg-input {
+  padding: 8px 16px;
+  height: 40px;
+  width: 100%;
+  background: #f7f7f7;
+  border: 1px solid #81868b;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 48px;
+  font-family: inherit !important;
+  margin: 0px;
+}
+.bg-input-wrapper .bg-input.bg-input__border-dashed {
+  border: 2px dashed #81868b;
+}
+.bg-input-wrapper::after {
+  content: attr(data-copy);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 18px;
+  top: 0;
+  height: 100%;
+  font-size: 14px;
+  color: #036ada;
+}
+.bg-input:focus {
+  outline: 0;
+}
+.bg-btn {
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  border-radius: 48px;
+  width: 100%;
+  padding: 8px 24px;
+  height: 40px;
+  background: var(--bixgrow_refferral_friend_pupup_button_bg);
+  color: var(--bixgrow_refferral_friend_pupup_button_text_color);
+  line-height: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: inherit !important;
+}
+.bg-btn-dark {
+}
+.bg-close {
+  position: absolute;
+  top: 18px;
+  right: 21px;
+  cursor: pointer;
+}
+.bg-powered-by-container {
+  text-align: center;
+  margin-bottom: 7px;
+}
+.bg-powered-by-text {
+  color: #ffff;
+  padding: 4px 19px;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  border-radius: 15px;
+  text-decoration: none;
+}
+.bixgrow-refferral-friend-pupup-logo {
+  margin-bottom: 24px;
+}
+
+.bixgrow-referral-friend-popup-checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 450;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #000;
+  width: 100%;
+  text-align: start;
+}
+
+.bixgrow-referral-friend-popup-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.bixgrow-referral-friend-popup-checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #81868b;
+}
+.bixgrow-referral-friend-popup-checkbox-container
+  input:checked
+  ~ .bixgrow-referral-friend-popup-checkmark {
+  background-color: rgb(0, 91, 211);
+}
+
+.bixgrow-referral-friend-popup-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.bixgrow-referral-friend-popup-checkbox-container
+  input:checked
+  ~ .bixgrow-referral-friend-popup-checkmark:after {
+  display: block;
+}
+.bixgrow-referral-friend-popup-checkbox-container
+  .bixgrow-referral-friend-popup-checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@-webkit-keyframes bganimatefade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bganimatefade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.bg-discount-expired {
+  color: #81868b;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 13px;
+}
+@media (max-width: 600px) {
+  .bg-modal-content {
+    width: 100%;
+    border-radius: 0;
+    padding: 40px 20px;
+    max-width: unset;
+  }
+}
