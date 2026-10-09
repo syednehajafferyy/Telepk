@@ -94,7 +94,7 @@ export const Navbar: React.FC = () => {
       {/* Main Navigation Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
         {/* Brand Logo & Categories Trigger */}
-        <div className="flex items-center gap-4 sm:gap-6">
+        <div className="flex items-center gap-2 sm:gap-6 shrink-0 min-w-0">
           <button
             onClick={() => {
               setSelectedCategory('All');
@@ -107,7 +107,7 @@ export const Navbar: React.FC = () => {
             <img
               src="/images/telex-logo.svg"
               alt="TeleX Official Logo"
-              className="h-8 sm:h-9 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-7 sm:h-9 w-auto max-w-[120px] sm:max-w-none object-contain transition-transform group-hover:scale-105 shrink-0"
             />
           </button>
 
@@ -245,7 +245,7 @@ export const Navbar: React.FC = () => {
         </div>
 
         {/* Right Navigation Controls: Wishlist, Cart Drawer Trigger, User */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           {/* Wishlist Link - 48px touch target */}
           <button
             type="button"
@@ -256,7 +256,7 @@ export const Navbar: React.FC = () => {
                 setIsCustomerModalOpen(true);
               }
             }}
-            className="relative min-w-[48px] min-h-[48px] rounded-2xl hover:bg-gray-100 text-gray-700 transition flex items-center justify-center cursor-pointer"
+            className="relative hidden sm:flex min-w-[40px] sm:min-w-[48px] min-h-[40px] sm:min-h-[48px] rounded-2xl hover:bg-gray-100 text-gray-700 transition items-center justify-center cursor-pointer"
             title="Wishlist"
           >
             <Heart className="w-5 h-5" />
@@ -267,11 +267,11 @@ export const Navbar: React.FC = () => {
             )}
           </button>
 
-          {/* Cart Drawer Trigger - 48px touch target */}
+          {/* Cart Drawer Trigger */}
           <button
             type="button"
             onClick={() => setIsCartOpen(true)}
-            className="flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-gray-100 hover:bg-gray-200 text-gray-900 transition font-medium min-h-[48px] cursor-pointer"
+            className="flex items-center gap-1.5 sm:gap-2 px-2.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-gray-100 hover:bg-gray-200 text-gray-900 transition font-medium min-h-[40px] sm:min-h-[48px] cursor-pointer shrink-0"
             title="Open Cart Drawer"
           >
             <div className="relative">
@@ -293,19 +293,19 @@ export const Navbar: React.FC = () => {
             </div>
           </button>
 
-          {/* DYNAMIC HEADER AUTH STATE (Requirement 1) */}
+          {/* DYNAMIC HEADER AUTH STATE */}
           {isAuthenticated && currentUser ? (
             /* 1. Authenticated State: User Avatar, Initials, and Interactive Dropdown */
-            <div ref={userMenuRef} className="relative">
+            <div ref={userMenuRef} className="relative shrink-0">
               <button
                 type="button"
                 onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                className="min-h-[48px] flex items-center gap-2 p-1.5 pl-2.5 rounded-2xl border border-gray-200 hover:border-gray-300 bg-white transition cursor-pointer"
+                className="min-h-[40px] sm:min-h-[48px] flex items-center gap-2 p-1.5 sm:pl-2.5 rounded-2xl border border-gray-200 hover:border-gray-300 bg-white transition cursor-pointer"
                 title="Account Menu"
               >
                 <div
                   style={{ backgroundColor: 'var(--color-primary)' }}
-                  className="w-7 h-7 rounded-xl text-white font-black text-xs flex items-center justify-center uppercase shadow-xs"
+                  className="w-7 h-7 rounded-xl text-white font-black text-xs flex items-center justify-center uppercase shadow-xs shrink-0"
                 >
                   {currentUser.name.slice(0, 1)}
                 </div>
@@ -364,25 +364,26 @@ export const Navbar: React.FC = () => {
               )}
             </div>
           ) : (
-            /* 2. Default State (Unauthenticated / Guest): Sleek TeleX Royal Blue Pill Button */
+            /* 2. Default State (Unauthenticated / Guest): Sleek TeleX Royal Blue Button */
             <button
               type="button"
               onClick={() => setIsCustomerModalOpen(true)}
-              className="bg-[#1362D7] hover:bg-[#0d4ca8] text-white rounded-full px-5 py-2 text-xs font-medium transition-all shadow-sm flex items-center gap-2 cursor-pointer border border-transparent hover:shadow-md active:scale-98 min-h-[40px]"
+              className="bg-[#1362D7] hover:bg-[#0d4ca8] text-white rounded-full p-2.5 sm:px-5 sm:py-2 text-xs font-medium transition-all shadow-sm flex items-center gap-1.5 sm:gap-2 cursor-pointer border border-transparent hover:shadow-md active:scale-98 min-h-[40px] shrink-0"
+              title="Sign In / Register"
             >
-              <User className="w-4 h-4" />
-              <span>Sign In / Register</span>
+              <User className="w-4 h-4 shrink-0" />
+              <span className="hidden sm:inline">Sign In / Register</span>
             </button>
           )}
 
-          {/* Mobile Menu Hamburger - 48px touch target */}
+          {/* Mobile Menu Hamburger */}
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="min-w-[48px] min-h-[48px] rounded-2xl hover:bg-gray-100 text-gray-700 lg:hidden flex items-center justify-center cursor-pointer"
+            className="min-w-[40px] sm:min-w-[48px] min-h-[40px] sm:min-h-[48px] rounded-2xl hover:bg-gray-100 text-gray-700 lg:hidden flex items-center justify-center cursor-pointer shrink-0"
             title="Toggle Menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
           </button>
         </div>
       </div>
