@@ -43,7 +43,7 @@ export const SafeImage: React.FC<SafeImageProps> = ({
         setHasError(true);
         if (onError) onError(e);
       }}
-      className={`object-contain p-3 w-full h-full transition-all duration-300 ${className}`}
+      className={`w-full h-full transition-all duration-300 ${className}`}
       {...props}
     />
   );
